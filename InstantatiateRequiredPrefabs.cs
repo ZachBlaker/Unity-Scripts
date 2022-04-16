@@ -2,7 +2,7 @@ using UnityEngine;
 
 // Instatiates a copy of each GameObject prefab from a path inside /Resources/
 // before the first scene is loaded
-// Used for creating instances of singleton classes or required global prefabs like Camera
+// Used for creating instances of singleton classes or prefabs shared between all your scenes
 // Instatiated GameObjects are marked with DontDestroyOnLoad 
 
 public static class InstantatiateRequiredPrefabs
@@ -16,15 +16,15 @@ public static class InstantatiateRequiredPrefabs
         if (!instantatiationEnabled)
             return;
 
-        Debug.Log($"<b>Initializing</b> required prefabs from {folderPathFromResources}");
+        Debug.Log($"<b>Instantiating</b> required prefabs from {folderPathFromResources}");
 
         GameObject[] prefabsToInstantiate = Resources.LoadAll<GameObject>(folderPathFromResources);
         foreach (GameObject prefab in prefabsToInstantiate)
         {
-            Debug.Log($"Instatiating {prefab.name}");
+            Debug.Log($"Instantiating {prefab.name}");
             GameObject prefabInstance = GameObject.Instantiate(prefab);
             GameObject.DontDestroyOnLoad(prefabInstance);
         }
-        Debug.Log($"<b>Completed Initialization</b> of {prefabsToInstantiate.Length} required prefabs");
+        Debug.Log($"<b>Completed Instantiating</b> of {prefabsToInstantiate.Length} required prefabs");
     }
 }
