@@ -1,5 +1,9 @@
 using UnityEngine;
 
+// Initializes a copy of each GameObject prefab from a path inside /Resources/
+// before the first scene is loaded
+// Used for creating instances of singleton classes or required global prefabs like Camera
+
 public static class InitializeRequiredPrefabs
 {
     const string folderPathFromResources = "LoadOnStart/";
