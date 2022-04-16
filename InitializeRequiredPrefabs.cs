@@ -1,8 +1,9 @@
 using UnityEngine;
 
-// Initializes a copy of each GameObject prefab from a path inside /Resources/
+// Instatiates a copy of each GameObject prefab from a path inside /Resources/
 // before the first scene is loaded
 // Used for creating instances of singleton classes or required global prefabs like Camera
+// Instatiated GameObjects are marked with DontDestroyOnLoad 
 
 public static class InitializeRequiredPrefabs
 {
