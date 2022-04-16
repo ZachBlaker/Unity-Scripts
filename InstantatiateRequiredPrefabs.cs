@@ -5,15 +5,15 @@ using UnityEngine;
 // Used for creating instances of singleton classes or required global prefabs like Camera
 // Instatiated GameObjects are marked with DontDestroyOnLoad 
 
-public static class InitializeRequiredPrefabs
+public static class InstantatiateRequiredPrefabs
 {
     const string folderPathFromResources = "LoadOnStart/";
-    static bool intiailizationEnabled = true;
+    static bool instantatiationEnabled = true;
 
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
-    public static void InitializePrefabsFromFolder()
+    public static void InstantatiatePrefabs()
     {
-        if (!intiailizationEnabled)
+        if (!instantatiationEnabled)
             return;
 
         Debug.Log($"<b>Initializing</b> required prefabs from {folderPathFromResources}");
